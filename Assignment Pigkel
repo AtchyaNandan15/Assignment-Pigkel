@@ -1,0 +1,55 @@
+
+
+/********************************************************************************************************************
+*  Atchya Nandan                                                                                       
+*  Date October 23rd  2019                                                                            
+*  Program: Dev c++ 5.11                                                                               
+*  Purpose: Learn how to use do and while loops                                                      
+* ---------------------------------------------------------------------                                
+* Date Dictionary:  int answer................................ the user inputs 1 for rock, 2 for paper or 3 for scissors
+                    int randomnumber............................random number between 1 to 100
+                    int num1.................................
+                    int count..................................It will count the number of guesses
+* 
+********************************************************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    int i;
+    int answer;
+    int randomnumber;
+    int num1;
+    int count;
+    int user1Num;
+    int user2Num;
+    int user3Num;
+    int userPoints;
+    
+
+
+do{
+
+       srand(time(0)); 
+    user1Num = rand() % 6 + 1 ;
+
+    cout<<"To rolls the dice enter GO ";
+    cin>> userPoints;
+    
+    if(userPoints==userPoints) {
+        cout<<"Dice one " <<user1Num<< "\n Dice two "  <<user1Num<< "\n Dice three " <<user1Num;
+    }
+
+    
+   }while(answer);
+  
+    
+    
+
+
+
+    
+}
