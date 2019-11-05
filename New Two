@@ -1,0 +1,100 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+   string userDice;
+   string userAgain;
+   int max;
+   int Dice1;
+   int Dice2;
+   int Dice3;
+   int userPoints=0;
+   int i;
+   int randomtimes;
+   int times;
+  
+  do{
+  //////////////////////////////////////////////////////////////////////////////////////////////
+  while(userDice!="roll") {
+     
+   
+     max = 6; 
+     srand(time(0));
+    //whole thing in a loop
+      //cout <<"Dice one " 
+      Dice1 =rand()% max + 1;
+      //cout <<"Dice two " 
+      Dice2=rand()% max + 1;
+      //cout <<"Dice three " 
+      Dice3=rand()% max + 1;
+      
+   cout<<"Enter ROLL ro roll your three dices";
+   cin>>userDice;
+  
+    Dice1=5;
+    Dice2=5;
+    Dice3=1;
+    
+   //user loop
+     if(userDice=="roll") {
+       cout<< " Dice One is " <<Dice1<<"\n";
+       cout<< " Dice two is " <<Dice2<<"\n";
+       cout<< " Dice three is " <<Dice3<<"\n";
+    }
+    
+       if(((Dice1==1) || (Dice2==1) || (Dice3==1)) && ((Dice1==5) || (Dice2==5) || (Dice3==5))) {
+        cout<<" You have 250 points\n";
+        cout<<" You have 400 points\n";
+        userPoints=userPoints + 250;
+        userPoints=userPoints + 400;
+        
+    }
+    
+     if ((Dice1==Dice2) && (Dice2==Dice3)) {
+        cout<<" you have 1500 points\n";
+       userPoints=userPoints + 1500;
+    }
+    
+     else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<" You have 250 points\n";
+        userPoints=userPoints + 250;
+    }
+    
+     else if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+        cout<<" You have 400 points\n";
+       userPoints=userPoints + 400;
+    }
+    
+    else if (((Dice1==4) || (Dice1==3) || (Dice1==2) || (Dice1==6)) && 
+    ((Dice2==4) || (Dice2==3) || (Dice2==2) || (Dice2==6)) &&
+    ((Dice3==4) || (Dice3==3) || (Dice3==2) || (Dice3==6)))
+    {
+    cout<<" You lost all your points ";
+    userPoints= userPoints + 100;
+    }
+    
+  }
+  /////////////////////////////////////////////////////////////////////////////////////////
+  times = 5;
+  randomtimes=rand()% times + 1; 
+ 
+  for(i=0;i>randomtimes;i++)
+  cout<<"cool";
+  
+  /////////////////////////////////////////////////////////////////////////////////////////////
+  
+  }while(userDice!= "stop");
+    
+    
+}
