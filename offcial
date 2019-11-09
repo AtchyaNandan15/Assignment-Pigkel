@@ -56,6 +56,8 @@ int main()
     //Dice2=4;
     //Dice3=3;
     
+    if(userPoints>0) {
+    
     //Displays the three Dice
     if(userDice=="ROLL") {
        cout<< " Dice One is " <<Dice1<<"\n";
@@ -113,12 +115,7 @@ int main()
       }
     
     }
-    
-    //the statments that don't have specfic points bring you back to 0
-    else {
-    cout<<" You lost all your points ";
-    userPoints = 0;
-     }
+      
       
     
     //ask the user if they want to go again 
@@ -126,10 +123,22 @@ int main()
     cout<<" If you would you like to roll again-----enter ROLL\n and if you would to bank then enter BANK\n";
     cin>>userAgain;
     
+      }
+    
+    //the statement that brings you back to 0
+    else {
+        cout<<" you lost all your points ";
+        userPoints=0;
+    }
+    
  
  
   //the user ends if they enter stop
-   }while(userAgain!="BANK");  //|| (userPoints!=0));
+  // }while((userAgain!="BANK") || (userPoints!=0));
+  
+      
+  }while((userAgain!="BANK") || (userPoints != 0));
+  
   
   /////////////////////////////////////////////////////////////////////////////////////////
   
@@ -163,7 +172,7 @@ int main()
     //Dice3=4;
     
    //user loop
-     if(comDice=="go") {
+     if(comDice=="GO") {
        cout<< " Dice One is " <<Dice1<<"\n";
        cout<< " Dice two is " <<Dice2<<"\n";
        cout<< " Dice three is " <<Dice3<<"\n";
@@ -234,7 +243,7 @@ int main()
  
   
   
-  }while(userDice != "yes");
+  }while(userDice != "YES");
   
   /////////////////////////////////////////////////////////////////////////////////////////////
   cout<<" This is your point trackers\n";
