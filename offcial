@@ -117,7 +117,7 @@ int main()
     //the statments that don't have specfic points bring you back to 0
     else {
     cout<<" You lost all your points ";
-    userPoints= 0;
+    userPoints = 0;
      }
       
     
@@ -227,7 +227,7 @@ int main()
      
   }
   
-    cout<<" It is now your turn so enter yes ";
+    cout<<" It is now your turn so enter yes"<<comPoints;
     cin>>userDice;
     
       
