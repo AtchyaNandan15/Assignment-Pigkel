@@ -1,0 +1,139 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   
+   string turn;
+   string comDice;
+   string userDice;
+   string userAgain;
+   int max = 6;
+   int Dice1;
+   int Dice2;
+   int Dice3;
+   int userPoints=0;
+   int i;
+   int randomtimes;
+   int times;
+   int comPoints=0;
+   
+   //The first do while loop that will loop the whole game
+   //do {
+       
+       
+   do {
+       
+         
+     max = 6; 
+     srand(time(0));
+     
+ //random function for Dice 1
+ Dice1 =rand()% max + 1;
+   
+ //random function for Dice 2
+ Dice2=rand()% max + 1;
+      
+ //random function for Dice3
+ Dice3=rand()% max + 1;
+
+   //asks the user to enter roll
+   cout<<" Enter ROLL to roll your three dices";
+   cin>>userDice;
+  
+    //Dice1=6;
+    //Dice2=4;
+    //Dice3=3;
+    
+    //Displays the three Dice
+    if(userDice=="ROLL") {
+       cout<< " Dice One is " <<Dice1<<"\n";
+       cout<< " Dice two is " <<Dice2<<"\n";
+       cout<< " Dice three is " <<Dice3<<"\n\n\n";
+    }
+    
+    
+    //The statement for recieving 1500 points
+    if ((Dice1==Dice2) && (Dice2==Dice3)) {
+        cout<<" you won 1500 points\n";
+       userPoints=userPoints + 1500;
+    }
+    
+    //The statement for recieving 1000 points
+    else if((Dice1==Dice2)||(Dice2==Dice3) ||(Dice1==Dice3)) {
+        cout<<" You won 1000 points\n";
+        userPoints=userPoints + 1000;
+   
+    //The statement for recieving 400 points when you also get 1000 points
+    if ((Dice1!= 1 && Dice2!=1 && Dice3==1) || (Dice1!=1 && Dice2==1 && Dice3!=1) || (Dice1==1 && Dice2!=1 && Dice3!=1)){
+        cout<<" You won 400 points\n";
+        userPoints=userPoints + 400;
+     }
+    
+    //The statement for recieving 250 points when you get 1000 points
+    else if ((Dice1!=5  && Dice2!=5 && Dice3==5) || (Dice1!=5 && Dice2==5 && Dice3!=5) || (Dice1==5 && Dice2!=5 && Dice3!=5)){
+        cout<<" You won 250 points\n";
+        userPoints=userPoints + 250;
+     }
+        }
+
+    //The statement for recieving 250 points
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<" You won 250 points\n";
+        userPoints=userPoints + 250;
+    }
+    
+    //The statemnet for recieving 400 points
+    else if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+        cout<<" You won 400 points\n";
+       userPoints=userPoints + 400;
+    }
+    
+    //The statement for recieving 250
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<" You won 250 points\n";
+        userPoints=userPoints + 250;
+  
+    //The statement for recieving 400 
+    if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+        cout<<" You won 400 points\n";
+       userPoints=userPoints + 400;
+      }
+    
+    }
+    
+      
+    //the statments that don't have specfic points bring you back to 0
+    else {
+    cout<<" You lost all your points ";
+    userPoints= 0;
+     }
+    
+    //ask the user if they want to go again 
+    cout<<" Good Job you got " <<userPoints<<"\n";
+    cout<<" If you would you like to roll again-----enter ROLL\n and if you would to bank then enter BANK\n";
+    cin>>userAgain;
+         
+ 
+  //the user ends if they enter stop 
+  }while(userAgain!="BANK" || userPoints!=0);
+  //}while(userAgain!="BANK");
+    cout<<" Have fun";
+       
+       
+       
+       
+
+      
+   //}while((userAgain!="BANK") || (userPoints!=0));
+   //cout<<"HAVE FUN";
+   
+}
