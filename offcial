@@ -52,11 +52,11 @@ int main()
    cout<<" Enter ROLL to roll your three dices";
    cin>>userDice;
   
-    //Dice1=6;
-    //Dice2=4;
-    //Dice3=3;
+    Dice1=6;
+    Dice2=4;
+    Dice3=3;
     
-    if(userPoints>0) {
+
     
     //Displays the three Dice
     if(userDice=="ROLL") {
@@ -65,7 +65,7 @@ int main()
        cout<< " Dice three is " <<Dice3<<"\n\n\n";
     }
     
-
+  
     
     //The statement for recieving 1500 points
     if ((Dice1==Dice2) && (Dice2==Dice3)) {
@@ -115,7 +115,8 @@ int main()
       }
     
     }
-      
+    
+    if(userPoints>0) {
       
     
     //ask the user if they want to go again 
@@ -137,7 +138,7 @@ int main()
   // }while((userAgain!="BANK") || (userPoints!=0));
   
       
-  }while((userAgain!="BANK") || (userPoints != 0));
+  }while((userAgain!="BANK") && (userPoints != 0));
   
   
   /////////////////////////////////////////////////////////////////////////////////////////
