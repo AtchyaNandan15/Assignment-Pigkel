@@ -261,8 +261,11 @@ int main()
     cout<<" The computer got\n" <<comPoints;
     cout<<" you got\n" <<userPoints;
     cout<<"The user will get one more turn \n";
-    cout<<"To go again enter ROLL";
-    cin>>userDice;
+    
+    //do{
+    //cout<<"To go again enter ROLL";
+    //cin>>userDice;
+    //}while(userDice!="ROLL");
 }
     
     
