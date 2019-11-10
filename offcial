@@ -55,9 +55,9 @@ int main()
    cout<<" Enter ROLL to roll your three dices";
    cin>>userDice;
   
-    Dice1=5;
-    Dice2=4;
-    Dice3=3;
+    //Dice1=5;
+    //Dice2=4;
+    //Dice3=3;
     
 
     
@@ -186,48 +186,48 @@ int main()
     
     //The statement for recieving 1500 points
     if ((Dice1==Dice2) && (Dice2==Dice3)) {
-        cout<<" you won 1500 points\n";
+        cout<<" The computer got 1500 points\n";
        comPoints=comPoints + 1500;
     }
     
     //The statement for recieving 1000 points
     else if((Dice1==Dice2)||(Dice2==Dice3) ||(Dice1==Dice3)) {
-        cout<<" You won 1000 points\n";
+        cout<<" The computer got 1000 points\n";
          comPoints=comPoints + 1000;
    
     //The statement for recieving 400 points when you also get 1000 points
     if ((Dice1!= 1 && Dice2!=1 && Dice3==1) || (Dice1!=1 && Dice2==1 && Dice3!=1) || (Dice1==1 && Dice2!=1 && Dice3!=1)){
-        cout<<" You won 400 points\n";
+        cout<<" The computer got 400 points\n";
          comPoints=comPoints + 400;
      }
     
     //The statement for recieving 250 points when you get 1000 points
     else if ((Dice1!=5  && Dice2!=5 && Dice3==5) || (Dice1!=5 && Dice2==5 && Dice3!=5) || (Dice1==5 && Dice2!=5 && Dice3!=5)){
-        cout<<" You won 250 points\n";
+        cout<<" The computer got 250 points\n";
         comPoints=comPoints + 250;
      }
         }
 
     //The statement for recieving 250 points
     else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
-        cout<<" You won 250 points\n";
+        cout<<" The computer won 250 points\n";
        comPoints=comPoints + 250;
     }
     
     //The statemnet for recieving 400 points
     else if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
-        cout<<" You won 400 points\n";
+        cout<<" The computer got 400 points\n";
        comPoints=comPoints + 400;
     }
     
     //The statement for recieving 250
     else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
-        cout<<" You won 250 points\n";
+        cout<<" The computer got 250 points\n";
         comPoints=comPoints + 250;
   
     //The statement for recieving 400 
     if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
-        cout<<" You won 400 points\n";
+        cout<<" The computer got 400 points\n";
        comPoints=comPoints + 400;
       }
     
@@ -248,7 +248,8 @@ int main()
  
   
   
-  }while(userDice != "YES");
+  }//while((userPoints!=2000) || (comPoints!=2000));
+  while(userDice != "YES");
   
   /////////////////////////////////////////////////////////////////////////////////////////////
   cout<<" This is your point trackers\n";
@@ -256,8 +257,10 @@ int main()
   cout<<" The computer got\n" <<comPoints<<"\n";
   cout<<" you got\n" <<userPoints<<"\n";
   
-  
-  }while((userPoints!=5000) || (comPoints!=5000));
+   
+  }//while(userDice != "YES");
+  //while((userPoints!=5000) || (comPoints!=5000));
+   while((userPoints < 2000) ); || (comPoints < 5000));
     
 }
   
