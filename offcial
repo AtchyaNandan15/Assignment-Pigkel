@@ -31,7 +31,9 @@ int main()
   
   //while(userDice!="done") {
  
- do{
+ //while((userPoints==5000) || (comPoints==5000))  {
+  
+  do{
   
   do {
        
@@ -53,9 +55,9 @@ int main()
    cout<<" Enter ROLL to roll your three dices";
    cin>>userDice;
   
-    //Dice1=6;
-    //Dice2=4;
-    //Dice3=3;
+    Dice1=5;
+    Dice2=4;
+    Dice3=3;
     
 
     
@@ -88,7 +90,7 @@ int main()
     //The statement for recieving 250 points when you get 1000 points
     else if ((Dice1!=5  && Dice2!=5 && Dice3==5) || (Dice1!=5 && Dice2==5 && Dice3!=5) || (Dice1==5 && Dice2!=5 && Dice3!=5)){
         cout<<" You won 250 points\n";
-        userPoints=userPoints + 250;
+        userPoints=userPoints + 250;    
      }
         }
 
@@ -255,18 +257,19 @@ int main()
   cout<<" you got\n" <<userPoints<<"\n";
   
   
-  }while((userPoints!=5000) && (comPoints!=5000));
+  }while((userPoints!=5000) || (comPoints!=5000));
     
+}
   
-    cout<<" The computer got\n" <<comPoints;
-    cout<<" you got\n" <<userPoints;
-    cout<<"The user will get one more turn \n";
+    //cout<<" The computer got\n" <<comPoints;
+    //cout<<" you got\n" <<userPoints;
+    //cout<<"The user will get one more turn \n";
     
     //do{
     //cout<<"To go again enter ROLL";
     //cin>>userDice;
     //}while(userDice!="ROLL");
-}
+
     
     
 
