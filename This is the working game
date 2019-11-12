@@ -191,19 +191,19 @@ int main()
     
     }
     
-    else if(userPoints > 3000) {
+    else if(userPoints > 10000) {
        cout<<"\t**************************************\n";
        cout<<"\tGOOD JOB Good Job you passed 2000 points " <<userPoints<<"\n";
        cout<<"\t**************************************\n";
    
     }
-   if ((userPoints>0) && (userPoints < 3000)) {
+   if ((userPoints>0) && (userPoints < 10000)) {
       
     
     //output the users total points
     
        cout<<"\t**************************************\n";
-       cout<<"\tGood Job YOUR TOTAL IS" <<userPoints<<"\n";
+       cout<<"\tGood Job YOUR TOTAL IS " <<userPoints<<"\n";
        cout<<"\t**************************************\n";
     //ask the user if they want to roll again or bank
        cout<<"\tIf you would you like to roll again-----enter ROLL\n\tand if you would to bank then enter BANK\n";
@@ -217,7 +217,7 @@ int main()
         userPoints=0;
     }
     
-    if (userPoints >= 3000) {
+    if (userPoints >= 10000) {
        
         cout<<"\n\t=======================================\n";
         cout<<"\n\tYOU WON THE FINAL GAME GOOD JOB !!!" <<userPoints<<"\n";
@@ -227,14 +227,14 @@ int main()
     } 
 
   }
-  while((userPoints!=0) && (userAgain!="BANK") && (userPoints < 3000) );
+  while((userPoints!=0) && (userAgain!="BANK") && (userPoints < 10000) );
 
 
 
  
   /////////////////////////////////////////////////////////////////////////////////////////
 
-  while (( comPoints <= 3000) && (userPoints <= 3000) && (userDice!= "YES")) {     
+  while (( comPoints <= 10000) && (userPoints <= 10000) && (userDice!= "YES")) {     
 
   cout<<"\t****************************************\n";
   cout<<"\tIt is now time to challenge the amazing computer\n\n\n";
@@ -257,9 +257,9 @@ int main()
       Dice3=rand()% max + 1;
       
   
-     //Dice1=5;
-     //Dice2=5;
-     //Dice3=5;
+     Dice1=0;
+     Dice2=0;
+     Dice3=0;
        
        void test ();
      {
@@ -363,11 +363,11 @@ int main()
      
   }
   
-        if(userPoints >= 3000) {
+        if(userPoints >= 10000) {
              cout<<"\t\tYOU WON!!!\n\n";
              
         }
-        if (comPoints >= 3000) {
+        if (comPoints >= 10000) {
              cout<<"\tCOMPUTER WON!!!\n\n";
 
         }  
@@ -392,10 +392,10 @@ int main()
   //cout<<"\tYOU GOT\n" <<userPoints<<"\n\n";
 
 
-}while((userDice=="YES") && (comPoints<=3000));
+}while((userDice=="YES") && (comPoints<=10000));
 
 //repeat the color or add a function
- if(comPoints>=3000) {
+ if(comPoints>=10000) {
    
    cout<<"\t**************************************\n";
    cout<<"\tTHE USER WILL GET TO GO AGAIN\n";
