@@ -33,14 +33,7 @@
 using namespace std;
 
 
-//void test ()
-     //{
-         
-         //cout<<"TEST TEST";
 
-         
-     //}
-     
 int main()
 {
      //PlaySound(TEXT(" music.wav "), NULL, SND_SYNC);
@@ -68,7 +61,7 @@ int main()
    
     //the rules for the game
     cout<<"\t\t\tTHE RULES OF PIGKEL\n\n\n";
-    cout<<"\t\t\t User will always go first \n\n\t\t\t You will roll 3 die at a time. \n\n\t\t\t You must get points in order to keep playing on your turn. \n\n\t\t\t You can choose to stop at any time in your turn. \n\n\t\t\t If you stop before getting no points in a roll then \n\n\t\t\t you will bank your points for your turn. \n\n\t\t\t And the computer will go. \n\n\t\t\t If you get no points before you say bank then \n\n\t\t\t you lose all your points for your turn and the computer will go. \n\n\t\t\t Your BANKED points are never lost.\n";
+    cout<<"\t\t\t > User will always go first \n\n\t\t\t > You will roll 3 die at a time. \n\n\t\t\t > You must get points in order to keep playing on your turn. \n\n\t\t\t > You can choose to stop at any time in your turn. \n\n\t\t\t > If you stop before getting no points in a roll then \n\n\t\t\t > you will bank your points for your turn. \n\n\t\t\t > And the computer will go. \n\n\t\t\t > If you get no points before you say bank then \n\n\t\t\t > you lose all your points for your turn and the computer will go. \n\n\t\t\t > Your BANKED points are never lost.\n";
     cout<<"\t\t\t====================================================================\n\n\n";
     
      do{
@@ -532,15 +525,20 @@ int main()
    
     //the computer is the winner
      if(userTry<comPoints){
-       cout<<"\t**************************************\n";
+ 
        cout<<"\t**************************************\n";
        cout<<"\tThe computer Wins\n";
        cout<<"\tThe COMPUTER GOT "<<comPoints<<"\n";
-       cout<<"\tI am very sorry  *****\  the computer won and got a total of"<<comPoints<<"\n";
-       cout<<"\tYOU DID A GOOD JOB" <<userTry<< "\n";
+       cout<<"\t**************************************\n";
+       cout<<"\tI am very sorry  *****  the computer won and got a total of "<<comPoints<<"\n";
+       cout<<"\tYOU DID A GOOD JOB OF GETTING " <<userTry<< "\n";
    }
 
  }
+
+
+
+
 
      //system("pause");
      //return 0;
