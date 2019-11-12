@@ -14,8 +14,8 @@ Write your code in this editor and press "Run" button to compile and execute it.
 #include<time.h>
 #include<stdlib.h>
 #include<cstdlib>
-#include<Windows.h>
-#include<MMSystem.h>
+//#include<Windows.h>
+//#include<MMSystem.h>
 
 
 using namespace std;
