@@ -1,0 +1,628 @@
+/********************************************************************************************************************
+*  Atchya Nandan                                                                                       
+*  Date: November 12th 2019                                                                            
+*  Program: Dev c++ 5.11                                                                               
+*  Purpose: Learn how to use for loops and while loops and do loops  
+*  project: unit 2 Pigkel Assignment
+* ---------------------------------------------------------------------                                
+* Date Dictionary:  string comDice...........................the computer inputs
+                    string userDice..........................the users inputs
+                    string userAgain.........................the user inputs to make it repeat
+                    int max..................................to divide the amount for the random function
+                    int Dice1................................he random value from 1 to 6
+                    int Dice2................................the random value from 1 to 6
+                    int Dice3................................the random value from 1 to 6
+                    int userPoints...........................the counter that adds all the users points
+                    int i..................................  the value inside the for loop
+                    int randomtimes..........................the random amount of times the for loop will repeat
+                    int comPoints............................the counter for the computer points
+                    int userTry..............................the total of the userpoints with one last try
+* 
+********************************************************************************************************************/
+
+#include <iostream>
+#include<string>
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#include<cstdlib>
+//#include<Windows.h>
+//#include<MMSystem.h>
+
+
+using namespace std;
+
+
+//void test ()
+     //{
+         
+         //cout<<"TEST TEST";
+
+         
+     //}
+     
+int main()
+{
+     //PlaySound(TEXT(" music.wav "), NULL, SND_SYNC);
+  
+
+     //system("color f5");
+     //cout<<"This is it ";
+
+   //declare the variables
+ 
+   string comDice;
+   string userDice;
+   string userAgain;
+   int max = 6;
+   int Dice1;
+   int Dice2;
+   int Dice3;
+   int userPoints=0;
+   int i;
+   int randomtimes;
+   int comPoints=0;
+   int bank=0;
+   int randomCom;
+   int userTry=0;
+   
+    //the rules for the game
+    cout<<"\t\t\tTHE RULES OF PIGKEL\n\n\n";
+    cout<<"\t\t\t User will always go first \n\n\t\t\t You will roll 3 die at a time. \n\n\t\t\t You must get points in order to keep playing on your turn. \n\n\t\t\t You can choose to stop at any time in your turn. \n\n\t\t\t If you stop before getting no points in a roll then \n\n\t\t\t you will bank your points for your turn. \n\n\t\t\t And the computer will go. \n\n\t\t\t If you get no points before you say bank then \n\n\t\t\t you lose all your points for your turn and the computer will go. \n\n\t\t\t Your BANKED points are never lost.\n";
+    cout<<"\t\t\t====================================================================\n\n\n";
+    
+     do{
+ 
+  
+        do {
+                userPoints = userPoints+bank;
+    
+     max = 6; 
+     srand(time(NULL));
+     
+        //random function for Dice 1
+        Dice1 =rand()% max + 1;
+   
+        //random function for Dice 2
+         Dice2=rand()% max + 1;
+      
+        //random function for Dice3
+        Dice3=rand()% max + 1;
+        
+        void test ();
+     {
+         cout<<"\n\t\t\t\t\t\t\t\t\t=====================================\n";
+         cout<<"\n\t\t\t\t\t\t\t\t\t=  COMPUTER BANKED:"<<comPoints<<"\n";
+         cout<<"\n\t\t\t\t\t\t\t\t\t=  USER BANKED BANKED:"<<userPoints<<"\n";
+         cout<<"\n\t\t\t\t\t\t\t\t\t======================================\n";
+
+         
+     }
+
+          //asks the user to enter roll
+    cout<<"\t{*************************************************** \n";
+    cout<<"\t{                                                   }\n";
+    cout<<"\t{                                                   }\n";
+    cout<<"\t{                                                    \n";
+    cout<<"\t{* * *  * Enter ROLL to roll your three dices:* * ** \n";
+    cout<<"\t{                                                   }\n";
+    cout<<"\t{                                                   }\n";
+    cout<<"\t{                                                   }\n"; 
+    cout<<"\t****************Enter ROLL down below***************\n\n\n";
+    cin>>userDice;
+  
+    //Dice1=1;
+    //Dice2=4;
+    //Dice3=3;
+    
+    
+    //Displays the three Dice
+    if(userDice=="ROLL") {
+      cout<<"\t****************************************\n";
+      cout<< "\t Dice One is "   <<Dice1<<"\n";
+      cout<<"\t****************************************\n";
+      cout<< "\t Dice two is "   <<Dice2<<"\n";
+      cout<<"\t****************************************\n";
+      cout<< "\t Dice three is " <<Dice3<<"\n\n\n";
+      cout<<"\t****************************************\n\n\n";
+
+    }
+    
+  
+    
+    //The statement for recieving 1500 points
+    if ((Dice1==Dice2) && (Dice2==Dice3)) {
+                cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB you won 1500 points\n";
+                cout<<"\t**************************************\n";
+        userPoints=userPoints + 1500;
+    }
+    
+    //The statement for recieving 1000 points
+    else if((Dice1==Dice2)||(Dice2==Dice3) ||(Dice1==Dice3)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 1000 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 1000;
+   
+    //The statement for recieving 400 points when you also get 1000 points
+    if ((Dice1!= 1 && Dice2!=1 && Dice3==1) || (Dice1!=1 && Dice2==1 && Dice3!=1) || (Dice1==1 && Dice2!=1 && Dice3!=1)){
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 400 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 400;
+     }
+    
+    //The statement for recieving 250 points when you get 1000 points
+    else if ((Dice1!=5  && Dice2!=5 && Dice3==5) || (Dice1!=5 && Dice2==5 && Dice3!=5) || (Dice1==5 && Dice2!=5 && Dice3!=5)){
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won AAA 250 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 250;    
+     }
+        }
+
+    //The statement for recieving 250 points
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won BBB 250 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 250;
+    }
+    
+    //The statemnet for recieving 400 points
+    else if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 400 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 400;
+
+    }
+    
+        
+    
+    //The statement for recieving 250
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won CCC 250 points\n";
+        userPoints=userPoints + 250;
+        cout<<"\t**************************************\n";
+
+    //The statement for recieving 400 
+    if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+                cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 400 points\n";
+                cout<<"\t**************************************\n";
+        userPoints=userPoints + 400;
+      }
+    
+    }
+    
+    else if(userPoints > 3000) {
+       cout<<"\t**************************************\n";
+       cout<<"\tGOOD JOB Good Job you passed 2000 points " <<userPoints<<"\n";
+       cout<<"\t**************************************\n";
+   
+    }
+   if ((userPoints>0) && (userPoints < 3000)) {
+      
+    
+    //output the users total points
+    
+       cout<<"\t**************************************\n";
+       cout<<"\tGood Job YOUR TOTAL IS" <<userPoints<<"\n";
+       cout<<"\t**************************************\n";
+    //ask the user if they want to roll again or bank
+       cout<<"\tIf you would you like to roll again-----enter ROLL\n\tand if you would to bank then enter BANK\n";
+       cin>>userAgain;
+    
+      }
+    
+    //the statement that brings you back to 0
+    else if (userPoints == 0) {
+        cout<<"\tyou lost all your points\n";
+        userPoints=0;
+    }
+    
+    if (userPoints >= 3000) {
+       
+        cout<<"\n\t=======================================\n";
+        cout<<"\n\tYOU WON THE FINAL GAME GOOD JOB !!!" <<userPoints<<"\n";
+        cout<<"\t========================================\n";
+     
+
+    } 
+
+  }
+  while((userPoints!=0) && (userAgain!="BANK") && (userPoints < 3000) );
+
+
+
+ 
+  /////////////////////////////////////////////////////////////////////////////////////////
+
+  while (( comPoints <= 3000) && (userPoints <= 3000) && (userDice!= "YES")) {     
+
+  cout<<"\t****************************************\n";
+  cout<<"\tIt is now time to challenge the amazing computer\n\n\n";
+  cout<<"\tEnter GO to start the computers turn\n\n\n";
+  cout<<"\t*****************************************\n\n\n";
+
+  cin>>comDice;
+  randomCom = rand()% 3 + 2;
+  
+
+    srand(time(0));
+    for (i=0;i<=randomCom;i++) {
+
+      //whole thing in a loop
+      //cout <<"Dice one " 
+      Dice1 =rand()% max + 1;
+      //cout <<"Dice two " 
+      Dice2=rand()% max + 1;
+      //cout <<"Dice three " 
+      Dice3=rand()% max + 1;
+      
+  
+     //Dice1=5;
+     //Dice2=5;
+     //Dice3=5;
+       
+       void test ();
+     {
+         cout<<"\n\t\t\t\t\t\t\t\t\t=====================================\n";
+         cout<<"\n\t\t\t\t\t\t\t\t\t=  COMPUTER BANKED:"<<comPoints<<"\n";
+         cout<<"\n\t\t\t\t\t\t\t\t\t=  USER BANKED BANKED:"<<userPoints<<"\n";
+         cout<<"\n\t\t\t\t\t\t\t\t\t======================================\n";
+
+         
+     }
+     //user loop
+     if(comDice=="GO") {
+       cout<<"\t**************************************\n";
+       cout<< "\tDice One is " <<Dice1<<"\n";
+       cout<<"\t**************************************\n";
+       cout<< "\tDice two is " <<Dice2<<"\n";
+       cout<<"\t**************************************\n";
+       cout<< "\tDice three is " <<Dice3<<"\n";
+       cout<<"\t**************************************\n\n\n";
+    }
+
+    
+    //The statement for recieving 1500 points
+    if ((Dice1==Dice2) && (Dice2==Dice3)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tThe computer got 1500 points\n";
+        cout<<"\t**************************************\n";
+        comPoints=comPoints + 1500;
+    }
+    
+    //The statement for recieving 1000 points
+    else if((Dice1==Dice2)||(Dice2==Dice3) ||(Dice1==Dice3)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tThe computer got 1000 points\n";
+        cout<<"\t**************************************\n";
+        comPoints=comPoints + 1000;
+   
+    //The statement for recieving 400 points when you also get 1000 points
+    if ((Dice1!= 1 && Dice2!=1 && Dice3==1) || (Dice1!=1 && Dice2==1 && Dice3!=1) || (Dice1==1 && Dice2!=1 && Dice3!=1)){
+        cout<<"\t**************************************\n";
+        cout<<"\tThe computer got 400 points\n";
+        cout<<"\t**************************************\n";
+        comPoints=comPoints + 400;
+     }
+    
+    //The statement for recieving 250 points when you get 1000 points
+    else if ((Dice1!=5  && Dice2!=5 && Dice3==5) || (Dice1!=5 && Dice2==5 && Dice3!=5) || (Dice1==5 && Dice2!=5 && Dice3!=5)){
+        cout<<"\t**************************************\n";
+        cout<<"\tThe computer got 250 points\n";
+        cout<<"\t**************************************\n";
+        comPoints=comPoints + 250;
+     }
+        }
+
+    //The statement for recieving 250 points
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+            cout<<"\t**************************************\n";
+            cout<<"\tThe computer won 250 points\n";
+            cout<<"\t**************************************\n";
+
+       comPoints=comPoints + 250;
+    }
+    
+    //The statemnet for recieving 400 points
+    else if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+            cout<<"\t**************************************\n";
+            cout<<"\tThe computer got 400 points\n";
+            cout<<"\t**************************************\n";
+
+       comPoints=comPoints + 400;
+    }
+    
+    //The statement for recieving 250
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tThe computer got 250 points\n";
+        cout<<"\t**************************************\n";
+
+
+        comPoints=comPoints + 250;
+  
+    //The statement for recieving 400 
+    if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+            cout<<"\t**************************************\n";
+            cout<<"\tThe computer got 400 points\n";
+            cout<<"\t**************************************\n";
+       comPoints=comPoints + 400;
+       
+      }
+    
+    }
+    
+    //the statments that don't have specfic points bring you back to 0
+    else {
+            cout<<"\t**************************************\n";
+            cout<<"\tThe computer lost all your points ";
+            cout<<"\t**************************************\n";
+
+    comPoints = 0;
+     }
+     
+  }
+  
+        if(userPoints >= 3000) {
+             cout<<"\t\tYOU WON!!!\n\n";
+             
+        }
+        if (comPoints >= 3000) {
+             cout<<"\tCOMPUTER WON!!!\n\n";
+
+        }  
+            cout<<"\tPOINT TRACKERS\n\n";
+            cout<<"\t**************************************\n";
+            cout<<"\tThe computer got a TOTAL OF"<<comPoints<< "\n";
+            cout<<"\tThe user got a TOTAL OF"<<userPoints<< "\n";
+            cout<<"\t**************************************\n";
+
+            cout<<"\tThe computer is finished and now it is your turn \n";
+            cout<<"\tEnter YES to CONTINUE\n\n";
+            cout<<"\t**************************************\n";
+
+             cin>>userDice;
+
+  } 
+  /////////////////////////////////////////////////////////////////////////////////////////////
+
+   //cout<<" This is your point trackers\n";
+  //cout<<" You get one more try\n";
+  //cout<<"\tTHE COMPUTER GOT\n" <<comPoints<<"\n\n";
+  //cout<<"\tYOU GOT\n" <<userPoints<<"\n\n";
+
+
+}while((userDice=="YES") && (comPoints<=3000));
+
+//repeat the color or add a function
+ if(comPoints>=3000) {
+   
+   cout<<"\t**************************************\n";
+   cout<<"\tTHE USER WILL GET TO GO AGAIN\n";
+   cout<<"\tYOU HAVE ONE MORE CHANCE\n";
+   cout<<"\tEnter ROLL\n";
+   cout<<"**************************************\n";
+
+    //asks the user to enter roll
+    cout<<"\t**********************************************************************\n";
+    cout<<"\t                                                                     }\n";
+    cout<<"\t                                                                     }\n";
+    cout<<"\t                                                                     }\n";
+    cout<<"\t* * * * * * * Enter ROLL to roll your three dices:* * * * * * * * * * \n";
+    cout<<"\t                                                                     }\n";
+    cout<<"\t                                                                     }\n";
+    cout<<"\t                                                                     }\n"; 
+    cout<<"\t**********************Enter ROLL down below***********************\n\n\n";
+    cin>>userDice;
+  
+    //Dice1=1;
+    //Dice2=1;
+    //Dice3=3;
+    
+    
+    //Displays the three Dice
+    if(userDice=="ROLL") {
+      cout<<"\t****************************************\n";
+      cout<< "\tDice One is "   <<Dice1<<"\n";
+      cout<<"\t****************************************\n";
+      cout<< "\tDice two is "   <<Dice2<<"\n";
+      cout<<"\t****************************************\n";
+      cout<< "\tDice three is " <<Dice3<<"\n\n\n";
+      cout<<"\t****************************************\n\n\n";
+
+    }
+    
+  
+    
+    //The statement for recieving 1500 points
+    if ((Dice1==Dice2) && (Dice2==Dice3)) {
+                cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB you won 1500 points\n";
+                cout<<"\t**************************************\n";
+        userPoints=userPoints + 1500 + userTry;
+    }
+    
+    //The statement for recieving 1000 points
+    else if((Dice1==Dice2)||(Dice2==Dice3) ||(Dice1==Dice3)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 1000 points\n";
+        cout<<"\t**************************************\n";
+        userTry=userPoints + 1000;
+        
+   
+    //The statement for recieving 400 points when you also get 1000 points
+    if ((Dice1!= 1 && Dice2!=1 && Dice3==1) || (Dice1!=1 && Dice2==1 && Dice3!=1) || (Dice1==1 && Dice2!=1 && Dice3!=1)){
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 400 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 400 + userTry;
+     }
+    
+    //The statement for recieving 250 points when you get 1000 points
+    else if ((Dice1!=5  && Dice2!=5 && Dice3==5) || (Dice1!=5 && Dice2==5 && Dice3!=5) || (Dice1==5 && Dice2!=5 && Dice3!=5)){
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won AAA 250 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 250 + userTry;    
+     }
+        }
+
+    //The statement for recieving 250 points
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won BBB 250 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 250 + userTry;
+    }
+    
+    //The statemnet for recieving 400 points
+    else if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 400 points\n";
+        cout<<"\t**************************************\n";
+        userPoints=userPoints + 400 + userTry;
+
+    }
+    
+        
+    
+    //The statement for recieving 250
+    else if((Dice1==5) || (Dice2==5) || (Dice3==5)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won CCC 250 points\n";
+        userPoints=userPoints + 250 + userTry;
+        cout<<"\t**************************************\n";
+
+    //The statement for recieving 400 
+    if((Dice1==1) || (Dice2==1) || (Dice3==1)) {
+        cout<<"\t**************************************\n";
+        cout<<"\tGOOD JOB You won 400 points\n";
+        cout<<"*\t*************************************\n";
+        userPoints=userPoints + 400 + userTry;
+      }
+    
+    }
+    
+    //the statement that brings you back to 0
+    else if (userPoints == 0) {
+        cout<<"\t**************************************\n";
+        cout<<"\tNOOOOOO YOU LOST YOU LOST ALL YOUR POINTS\n";
+                cout<<"\t**************************************\n";
+        userPoints=0;
+        
+    }
+    
+  
+    //the user is the winner
+   if(userTry>comPoints){
+      cout<<"\t**************************************\n";
+      cout<<"\t**************************************\n";
+      cout<<"\tYOU HAVE WON THE FINAL ROUND\n";
+      cout<<"\tThe USER GOT "<<userTry<<"\n";
+      cout<<"\tYou beat the computer and the computer got a total of\n\n"<<comPoints;
+        
+   }
+   
+    //the computer is the winner
+     if(userTry<comPoints){
+       cout<<"\t**************************************\n";
+       cout<<"\t**************************************\n";
+       cout<<"\tThe computer Wins\n";
+       cout<<"\tThe COMPUTER GOT "<<comPoints<<"\n";
+       cout<<"\tI am very sorry  *****\  the computer won and got a total of"<<comPoints<<"\n";
+       cout<<"\tYOU DID A GOOD JOB" <<userTry<< "\n";
+   }
+
+ }
+
+     //system("pause");
+     //return 0;
+}
+        
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
